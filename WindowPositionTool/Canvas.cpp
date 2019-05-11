@@ -92,9 +92,13 @@ QString Canvas::start() {
 	// read file list
 	filenames.clear();
 	QDir dir("../tiles/");
-	QFileInfoList list = dir.entryInfoList();
+	QFileInfoList list = dir.entryInfoList();
+
 	foreach (QFileInfo finfo, list) {
-		QString name = finfo.fileName();		if (name == "." || name == "..") continue;		filenames.push_back(name);
+		QString name = finfo.fileName();
+		if (name == "." || name == "..") continue;
+
+		filenames.push_back(name);
 	}
 
 	std::cout << filenames.size() << std::endl;
